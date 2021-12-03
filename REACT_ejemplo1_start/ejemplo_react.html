@@ -1,0 +1,66 @@
+<html>
+<head>
+	<script src="js/react.min.js"></script> <!-- Son nuestro métodos -->
+	<script src="js/react-dom.min.js"></script> <!-- El DOMVirtual -->
+	<script src="js/browser.min.js"></script>  <!-- El secuestrador del navegador! -->
+	
+	<style>
+		.conborde {
+			border: solid 1px green;
+			padding: 10px;
+			margin: 5px;
+		}
+		.conborde2 {
+			border: solid 1px red;
+			padding: 10px;
+			margin: 5px;
+		}
+		.conbordereact {
+			border: solid 1px blue;
+			padding: 10px;
+			margin: 5px;
+		}
+		
+	</style>
+	
+</head>
+
+	<div id="id1" class="conborde"> 
+		<div class="conborde2">
+			<h1> titulo: Avatar</h1>
+			<h2> genero: Accion</h2>
+			<img src="img/R.png"> </img>
+		</div>
+	</div>
+	<div id="id2" class="conborde"> </div>
+	<div id="id3" class="conborde"> </div>
+	<div id="id4" class="conborde"> </div>
+	<div id="id5" class="conborde"> </div>
+	<div id="id6" class="conborde"> </div>
+	
+
+
+	<script type="text/babel">
+		var Tarjeta = React.createClass(
+				{ //El parametro de createClass es un JSON, 
+				 //por lo que esta llave es para un JSON
+					render: function() //Una función anonima
+							{//Esta segunda llave es para un bloque de código JS
+								return(
+									<div className="conbordereact">
+										<h1> titulo: Avatar </h1>
+										<h2> genero: acción </h2>
+										<img src="img/R.png" width="100" height="107"></img>
+									</div>
+						
+								);
+							}
+				}
+			)		
+		ReactDOM.render(<Tarjeta> Manoel </Tarjeta>, document.getElementById("id2"))
+		ReactDOM.render(<Tarjeta />, document.getElementById("id3"))
+		ReactDOM.render(<Tarjeta />, document.getElementById("id4"))
+		ReactDOM.render(<Tarjeta />, document.getElementById("id5"))
+		ReactDOM.render(<Tarjeta />, document.getElementById("id6"))
+	</script>
+</html>
